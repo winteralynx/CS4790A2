@@ -1,0 +1,92 @@
+﻿@*@model CS4790A2.Models.Course*@
+
+@model CS4790A2.Models.CourseAndSections
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Course Details with Sections</h2>
+
+@*<!--Added .course to each of the model.xxx lines-->*@
+<div>
+    <h4>Course Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.course.courseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course.courseNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.course.courseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course.courseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.course.creditHours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course.creditHours)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.course.maxEnrollment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.course.maxEnrollment)
+        </dd>
+
+    </dl>
+</div>
+
+<h4>Course Sections</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.sections[0].sectionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.sections[0].sectionNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.sections[0].sectionDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.sections[0].sectionTime)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.sections)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sectionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sectionNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sectionDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sectionTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id}) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

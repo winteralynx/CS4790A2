@@ -1,0 +1,58 @@
+﻿@model CS4790A2.Models.Section
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Section</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sectionID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sectionID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sectionNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sectionNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.courseNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.courseNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sectionDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sectionDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sectionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sectionTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

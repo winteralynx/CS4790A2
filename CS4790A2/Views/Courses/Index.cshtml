@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CS4790A2.Models.Course>
+
+@{
+    ViewBag.Title = "Course List";
+}
+
+<h2>Course List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.courseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.creditHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.maxEnrollment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.creditHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maxEnrollment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CS4790A2.Models.Section>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sectionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sectionNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.courseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sectionDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sectionTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sectionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sectionNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.courseNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sectionDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sectionTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
