@@ -48,6 +48,11 @@
     </dl>
 </div>
 
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.course.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
 <h4>Course Sections</h4>
 
 <table class="table">
@@ -90,3 +95,6 @@
         </tr>
     }
 </table>
+<p>
+    @Html.ActionLink("Create new section", "Create", "Sections", new {})
+</p>

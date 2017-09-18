@@ -93,7 +93,8 @@ namespace CS4790A2.Models
         /// <param name="id"></param>
         /// <returns></returns>
         public static CourseAndSections getCourseAndSections(int? id)
-        {
+        { 
+            // Hilton has Course course = Repository.getCoures(id); 
             CourseAndSections courseAndSection = BasicSchool.getCourseAndSections(id); 
             return courseAndSection; 
         }
