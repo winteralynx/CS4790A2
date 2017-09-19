@@ -36,8 +36,9 @@ namespace CS4790A2.Controllers
         }
 
         // GET: Sections/Create
-        public ActionResult Create()
+        public ActionResult Create(String courseNumber) //Added the "String id" 
         {
+            ViewBag.courseNumber = courseNumber; 
             return View();
         }
 
